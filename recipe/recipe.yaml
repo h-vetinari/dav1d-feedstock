@@ -40,12 +40,12 @@ outputs:
       from: dav1d-split
       run_exports: true
 
-    # If this output accepts run_exports from dav1d-split, then I would expect to not get
-    # overlinking errors for libraries provided by these
-    # requirements:
-    #   build:
-    #     - ${{ compiler('c') }}
-    #     - ${{ stdlib('c') }}
+    requirements:
+      build:
+        # If this output accepts run_exports from dav1d-split, then I would expect to not
+        # need to specify the build dependencies again?
+        - ${{ compiler('c') }}
+        - ${{ stdlib('c') }}
 
     build:
       files:
@@ -149,12 +149,6 @@ outputs:
     inherit:
       from: dav1d-split
       run_exports: true
-    # If this output accepts run_exports from dav1d-split, then I would expect to not get
-    # overlinking errors for libraries provided by these
-    # requirements:
-    #   build:
-    #     - ${{ compiler('c') }}
-    #     - ${{ stdlib('c') }}
     build:
       files:
         include:
@@ -163,6 +157,11 @@ outputs:
           - if: unix
             then: bin/dav1d
     requirements:
+      build:
+        # If this output accepts run_exports from dav1d-split, then I would expect to not
+        # need to specify the build dependencies again?
+        - ${{ compiler('c') }}
+        - ${{ stdlib('c') }}
       host:
         - ${{ pin_subpackage('dav1d-dev', exact=True) }}
       run:
