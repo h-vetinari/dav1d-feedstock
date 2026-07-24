@@ -23,7 +23,10 @@ requirements:
     - ninja
     - nasm >=2.14
     - pkg-config
-    - m2-sed  # [win]
+{% if target_platform == "win-arm64" %}
+    - m2-perl
+    - clang
+{% endif %}
 
 outputs:
 
@@ -32,9 +35,9 @@ outputs:
     files:
       include:
         - "include/**/*"  # [unix]
-        - "lib/**/*"      # [unix] 
+        - "lib/**/*"      # [unix]
         - "Library/include/**/*"  # [win]
-        - "Library/lib/**/*"      # [win] 
+        - "Library/lib/**/*"      # [win]
       exclude:
         # versioned libs
         - "lib/lib*.*.dylib"  # [osx]

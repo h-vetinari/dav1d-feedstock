@@ -9,23 +9,27 @@ if "%target_platform%" == "win-arm64" (
     echo cpu = 'aarch64'
     echo endian = 'little'
     echo.
+    echo [binaries]
+    echo ar = 'lib'
+    echo windres = 'rc'
+    echo.
     echo [properties]
     echo needs_exe_wrapper = true) > cross_file.ini
     if errorlevel 1 exit 1
     set "MESON_CROSS=--cross-file cross_file.ini"
-    rem gas-preprocessor.pl is not yet available on conda-forge, so
-    rem disable ARM64 ASM; dav1d falls back to pure-C implementations.
-    set "MESON_ARM64_ASM=-Denable_asm=false"
+    rem gas-preprocessor.pl preprocesses GAS-format ARM64 assembly for
+    rem armasm64.exe.  Copy it and the cpp wrapper into the MSYS2 bin dir
+    rem so that MSYS2 perl can find and exec them as POSIX scripts.
+    copy /Y "%RECIPE_DIR%\gas-preprocessor.pl" "%BUILD_PREFIX%\Library\usr\bin\" && copy /Y "%RECIPE_DIR%\cpp" "%BUILD_PREFIX%\Library\usr\bin\cpp"
+    if errorlevel 1 exit 1
 ) else (
     set "MESON_CROSS="
-    set "MESON_ARM64_ASM="
 )
 
 meson setup builddir           ^
     %MESON_ARGS%               ^
     --prefix=%LIBRARY_PREFIX%  ^
     -Denable_tests=false       ^
-    %MESON_ARM64_ASM%          ^
     %MESON_CROSS%
 if errorlevel 1 exit 1
 
