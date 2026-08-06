@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Wrapper used by gas-preprocessor.pl when cross-compiling to win-arm64.
+# Clang targeting aarch64-pc-windows-msvc provides MSVC-compatible preprocessing.
+# -D_MSC_VER is explicit because gas-preprocessor.pl passes -undef, which
+# suppresses clang's automatic predefined macros for the target. The value 1900
+# (VS 2015) is used only as a presence signal — dav1d's asm checks #ifdef
+# _MSC_VER, not a version threshold, so the exact value does not matter.
+exec clang -E --target=aarch64-pc-windows-msvc -D_MSC_VER=1900 "$@"
