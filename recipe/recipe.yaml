@@ -1,7 +1,7 @@
 # library version is different from project version
 # Check 'meson.build' upstream in every release!
 context:
-  version: 1.5.3
+  version: 1.5.4
   so_name: 7.0.0
   so_name_major: ${{ so_name | split('.') | first }}
 
@@ -11,7 +11,7 @@ recipe:
 
 source:
   - url: https://code.videolan.org/videolan/dav1d/-/archive/${{ version }}/dav1d-${{ version }}.tar.gz
-    sha256: cbe212b02faf8c6eed5b6d55ef8a6e363aaab83f15112e960701a9c3df813686
+    sha256: a1d5b63d2d38ec9bd03acf643caa51fa22edd1e89c5a109c4807717216bbec07
 
 build:
   number: 1
