@@ -31,6 +31,10 @@ outputs:
         - ninja
         - nasm >=2.14
         - pkg-config
+        - if: target_platform == "win-arm64"
+          then:
+            - m2-perl
+            - clang
 
   # Only what's needed for run_exports downstream
   - package:
