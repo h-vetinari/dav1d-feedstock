@@ -94,6 +94,8 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage('libdav1d' ~ so_name_major, upper_bound=None) }}
+      run_constraints:
+        - _libdav1d_api < 0
 
   # Everything needed to build against libdav1d (excludes binary)
   - package:
@@ -118,10 +120,12 @@ outputs:
               - lib/pkgconfig/*
     requirements:
       run:
-        - ${{ pin_subpackage('libdav1d', exact=True) }}
+        - if: win
+          then: ${{ pin_subpackage('libdav1d', exact=True) }}
         - ${{ pin_subpackage('libdav1d' ~ so_name_major, exact=True) }}
       run_exports:
-        - ${{ pin_subpackage('libdav1d', upper_bound=None) }}
+        - if: win
+          then: ${{ pin_subpackage('libdav1d', upper_bound=None) }}
         - ${{ pin_subpackage('libdav1d' ~ so_name_major, upper_bound=None) }}
     tests:
       - script:
@@ -179,7 +183,8 @@ outputs:
       run:
         # run_exports from subpackages dav1d-devel exist when built with rattler-build pre-release,
         # so the following are redundant:
-        - ${{ pin_subpackage('libdav1d', upper_bound=None) }}
+        - if: win
+          then: ${{ pin_subpackage('libdav1d', upper_bound=None) }}
         - ${{ pin_subpackage('libdav1d' ~ so_name_major, upper_bound=None) }}
     tests:
       - script:
