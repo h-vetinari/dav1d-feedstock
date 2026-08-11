@@ -93,7 +93,7 @@ outputs:
 
   # Everything needed to build against libdav1d (excludes binary)
   - package:
-      name: dav1d-dev
+      name: dav1d-devel
     inherit:
       from: dav1d-split
       run_exports: false
@@ -143,6 +143,14 @@ outputs:
             - if exist %PREFIX%\\Library\\bin\\dav1d.dll exit 1
             - if exist %PREFIX%\\Library\\bin\\dav1d exit 1
 
+  - package:
+      name: dav1d-dev
+    requirements:
+      host:
+        - ${{ pin_subpackage('dav1d-devel', exact=True) }}
+      run:
+        - ${{ pin_subpackage('dav1d-devel', exact=True) }}
+
   # Everything needed to run the dav1d binary
   - package:
       name: dav1d
@@ -163,9 +171,9 @@ outputs:
         - ${{ compiler('c') }}
         - ${{ stdlib('c') }}
       host:
-        - ${{ pin_subpackage('dav1d-dev', exact=True) }}
+        - ${{ pin_subpackage('dav1d-devel', exact=True) }}
       run:
-        # run_exports from subpackages dav1d-dev exist when built with rattler-build pre-release,
+        # run_exports from subpackages dav1d-devel exist when built with rattler-build pre-release,
         # so the following are redundant:
         - ${{ pin_subpackage('libdav1d', upper_bound=None) }}
         - ${{ pin_subpackage('libdav1d' ~ so_name_major, upper_bound=None) }}
