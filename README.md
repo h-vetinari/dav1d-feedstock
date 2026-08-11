@@ -3,25 +3,11 @@ About dav1d-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dav1d-feedstock/blob/main/LICENSE.txt)
 
-
-About dav1d
------------
-
 Home: https://code.videolan.org/videolan/dav1d
 
 Package license: BSD-2-Clause
 
 Summary: dav1d is the fastest AV1 decoder on all platforms
-
-About _libdav1d_api
--------------------
-
-
-
-Package license: 
-
-Summary: An empty package that prevents multiple ABIs of libdavid being installed simultaneously on Windows.
-
 
 Current build status
 ====================
@@ -48,31 +34,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_aarch64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=16744&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dav1d-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=16744&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dav1d-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=16744&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dav1d-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=16744&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dav1d-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -88,9 +53,10 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-__libdav1d__api-green.svg)](https://anaconda.org/conda-forge/_libdav1d_api) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/_libdav1d_api.svg)](https://anaconda.org/conda-forge/_libdav1d_api) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/_libdav1d_api.svg)](https://anaconda.org/conda-forge/_libdav1d_api) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/_libdav1d_api.svg)](https://anaconda.org/conda-forge/_libdav1d_api) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dav1d-green.svg)](https://anaconda.org/conda-forge/dav1d) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dav1d.svg)](https://anaconda.org/conda-forge/dav1d) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dav1d.svg)](https://anaconda.org/conda-forge/dav1d) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dav1d.svg)](https://anaconda.org/conda-forge/dav1d) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-dav1d--dev-green.svg)](https://anaconda.org/conda-forge/dav1d-dev) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dav1d-dev.svg)](https://anaconda.org/conda-forge/dav1d-dev) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dav1d-dev.svg)](https://anaconda.org/conda-forge/dav1d-dev) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dav1d-dev.svg)](https://anaconda.org/conda-forge/dav1d-dev) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-dav1d--devel-green.svg)](https://anaconda.org/conda-forge/dav1d-devel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/dav1d-devel.svg)](https://anaconda.org/conda-forge/dav1d-devel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/dav1d-devel.svg)](https://anaconda.org/conda-forge/dav1d-devel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/dav1d-devel.svg)](https://anaconda.org/conda-forge/dav1d-devel) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libdav1d-green.svg)](https://anaconda.org/conda-forge/libdav1d) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libdav1d.svg)](https://anaconda.org/conda-forge/libdav1d) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libdav1d.svg)](https://anaconda.org/conda-forge/libdav1d) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libdav1d.svg)](https://anaconda.org/conda-forge/libdav1d) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libdav1d7-green.svg)](https://anaconda.org/conda-forge/libdav1d7) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libdav1d7.svg)](https://anaconda.org/conda-forge/libdav1d7) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libdav1d7.svg)](https://anaconda.org/conda-forge/libdav1d7) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libdav1d7.svg)](https://anaconda.org/conda-forge/libdav1d7) |
 
 Installing dav1d
@@ -103,42 +69,86 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `_libdav1d_api, dav1d, dav1d-dev, libdav1d7` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
-conda install _libdav1d_api dav1d dav1d-dev libdav1d7
+conda install dav1d dav1d-dev dav1d-devel libdav1d libdav1d7
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
-mamba install _libdav1d_api dav1d dav1d-dev libdav1d7
+mamba install dav1d dav1d-dev dav1d-devel libdav1d libdav1d7
 ```
 
-It is possible to list all of the versions of `_libdav1d_api` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
 
 ```
-conda search _libdav1d_api --channel conda-forge
+# for adding to your local project
+pixi add dav1d dav1d-dev dav1d-devel libdav1d libdav1d7
+# for installing globally
+pixi global install dav1d dav1d-dev dav1d-devel libdav1d libdav1d7
 ```
 
-or with `mamba`:
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `dav1d` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
-mamba search _libdav1d_api --channel conda-forge
+conda search dav1d --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With mamba</summary>
+
+```
+mamba search dav1d --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search dav1d --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search _libdav1d_api --channel conda-forge
+mamba repoquery search dav1d --channel conda-forge
 
-# List packages depending on `_libdav1d_api`:
-mamba repoquery whoneeds _libdav1d_api --channel conda-forge
+# List packages depending on `dav1d`:
+mamba repoquery whoneeds dav1d --channel conda-forge
 
-# List dependencies of `_libdav1d_api`:
-mamba repoquery depends _libdav1d_api --channel conda-forge
+# List dependencies of `dav1d`:
+mamba repoquery depends dav1d --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
