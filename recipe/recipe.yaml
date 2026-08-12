@@ -157,6 +157,10 @@ outputs:
         - ${{ pin_subpackage('dav1d-devel', exact=True) }}
       run:
         - ${{ pin_subpackage('dav1d-devel', exact=True) }}
+      run_exports:
+        - if: win
+          then: ${{ pin_subpackage('libdav1d', upper_bound=None) }}
+        - ${{ pin_subpackage('libdav1d' ~ so_name_major, upper_bound=None) }}
 
   # Everything needed to run the dav1d binary
   - package:
