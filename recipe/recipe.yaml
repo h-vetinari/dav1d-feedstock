@@ -120,9 +120,8 @@ outputs:
               - lib/pkgconfig/*
     requirements:
       run:
-        - if: win
-          then: ${{ pin_subpackage('libdav1d', exact=True) }}
-        - ${{ pin_subpackage('libdav1d' ~ so_name_major, exact=True) }}
+        - if: not win
+          then: ${{ pin_subpackage('libdav1d' ~ so_name_major, exact=True) }}
       run_exports:
         - if: win
           then: ${{ pin_subpackage('libdav1d', upper_bound=None) }}
