@@ -14,7 +14,7 @@ source:
     sha256: a1d5b63d2d38ec9bd03acf643caa51fa22edd1e89c5a109c4807717216bbec07
 
 build:
-  number: 2
+  number: 3
 
 outputs:
 
@@ -128,27 +128,27 @@ outputs:
         - ${{ pin_subpackage('libdav1d' ~ so_name_major, upper_bound=None) }}
     tests:
       - script:
-        - if: linux
-          then:
-            - test -f ${PREFIX}/lib/libdav1d.so.${{ so_name_major }}
-            - test -f ${PREFIX}/lib/libdav1d.so.${{ so_name }}
-        - if: osx
-          then:
-            - test -f ${PREFIX}/lib/libdav1d.${{ so_name_major }}.dylib
-        - if: unix
-          then:
-            - test -f ${PREFIX}/lib/libdav1d$SHLIB_EXT
-            - test -f ${PREFIX}/include/dav1d/dav1d.h
-            - test -f ${PREFIX}/lib/pkgconfig/dav1d.pc
-            - test ! -f ${PREFIX}/lib/libdav1d.a
-            - test ! -f ${PREFIX}/bin/dav1d
-        - if: win
-          then:
-            - if not exist %PREFIX%\\Library\\lib\\dav1d.lib exit 1
-            - if not exist %PREFIX%\\Library\\include\\dav1d\\dav1d.h exit 1
-            - if not exist %PREFIX%\\Library\\lib\\pkgconfig\\dav1d.pc exit 1
-            - if exist %PREFIX%\\Library\\bin\\dav1d.dll exit 1
-            - if exist %PREFIX%\\Library\\bin\\dav1d exit 1
+          - if: linux
+            then:
+              - test -f ${PREFIX}/lib/libdav1d.so.${{ so_name_major }}
+              - test -f ${PREFIX}/lib/libdav1d.so.${{ so_name }}
+          - if: osx
+            then:
+              - test -f ${PREFIX}/lib/libdav1d.${{ so_name_major }}.dylib
+          - if: unix
+            then:
+              - test -f ${PREFIX}/lib/libdav1d$SHLIB_EXT
+              - test -f ${PREFIX}/include/dav1d/dav1d.h
+              - test -f ${PREFIX}/lib/pkgconfig/dav1d.pc
+              - test ! -f ${PREFIX}/lib/libdav1d.a
+              - test ! -f ${PREFIX}/bin/dav1d
+          - if: win
+            then:
+              - if not exist %PREFIX%\\Library\\lib\\dav1d.lib exit 1
+              - if not exist %PREFIX%\\Library\\include\\dav1d\\dav1d.h exit 1
+              - if not exist %PREFIX%\\Library\\lib\\pkgconfig\\dav1d.pc exit 1
+              - if exist %PREFIX%\\Library\\bin\\dav1d.dll exit 1
+              - if exist %PREFIX%\\Library\\bin\\dav1d exit 1
 
   - package:
       name: dav1d-dev
